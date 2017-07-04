@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+        <title>ez-field-edit demo</title>
+
+        <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+        <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+        <link rel="import" href="../ez-field-edit.html">
+        <style>
+            ez-field-edit input:invalid {
+                border: 1px solid #d92d42;
+                background-color: #fceaec;
+                box-shadow: inset 0 0 8px rgba(217, 45, 66, .25);
+                outline-color: #d92d42;
+            }
+
+            .ez-invalid-input label {
+                color: #d92d42;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="vertical-section-container centered">
+            <h3>ez-field-edit demo</h3>
+            <demo-snippet>
+                <template>
+                    <form>
+                        <ez-field-edit>
+                            <h1>Simple input:</h1>
+                            <input id="input1" type="text" pattern=".{6,}">
+                            <label for="input1">Empty or 6+ characters to be valid </label>
+                        </ez-field-edit>
+                        <ez-field-edit>
+                            <h1>Multiple inputs:</h1>
+                            <div>
+                                <label for="input2">Empty or 4+ characters to be valid</label>
+                                <input id="input2" type="text" pattern=".{4,}">
+                            </div>
+                            <div>
+                                <label for="input3">Should be number to be valid</label>
+                                <input id="input3" type="text" pattern="\d*"/>
+                            </div>
+                        </ez-field-edit>
+                    </form>
+                </template>
+            </demo-snippet>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+        <title>ez-field-edit test</title>
+
+        <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+        <script src="../../web-component-tester/browser.js"></script>
+
+        <link rel="import" href="../ez-field-edit.html">
+    </head>
+    <body>
+        <test-fixture id="BasicTestFixture">
+            <template>
+                <ez-field-edit>
+                    <p>
+                        <label for="input1">Field label</label>
+                    </p>
+                    <input id="input1" type="text" pattern="\d*"/>
+                </ez-field-edit>
+            </template>
+        </test-fixture>
+        <test-fixture id="BasicTestFixtureMultipleInputs">
+            <template>
+                <ez-field-edit>
+                    <div id="lowestCommonParent1">
+                        <label for="input2">Field label</label>
+                        <a>
+                            <span>
+                                <input id="input2" type="text" pattern="\d*"/>
+                            </span>
+                        </a>
+                    </div>
+                    <div id="lowestCommonParent2">
+                        <h2>
+                            <label for="input3">Field label</label>
+                        </h2>
+                        <input id="input3" type="text" pattern="\d*"/>
+                    </div>
+                </ez-field-edit>
+            </template>
+        </test-fixture>
+        <test-fixture id="BasicTestFixtureInputWithoutLabel">
+            <template>
+                <ez-field-edit>
+                    <div>
+                        <a>
+                            <span  id="lowestParent">
+                                <input id="input2" type="text" pattern="\d*"/>
+                            </span>
+                        </a>
+                    </div>
+                </ez-field-edit>
+            </template>
+        </test-fixture>
+        <script src="js/ez-field-edit.js"></script>
+    </body>
+</html>
